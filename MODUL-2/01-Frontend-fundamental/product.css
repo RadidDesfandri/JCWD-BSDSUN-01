@@ -1,0 +1,45 @@
+/* External CSS -> file .css */
+h3 {
+  color: yellow;
+}
+
+/* Selector Class ditandai dengan .(dot) */
+.mobil {
+  color: white;
+  background-color: gray;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* Selector ID ditandai dengan #(hash) */
+#avanza {
+  color: blue;
+}
+
+#alya {
+  color: yellow;
+}
+
+/* Selector Attribute */
+a[href] {
+  color: rgb(168, 43, 43);
+}
+
+/* body {
+  background-color: lightgray;
+  background: url("./assets/tungtung-sahur.jpg");
+  background-repeat: repeat;
+  background-size: 120px;
+} */
+
+.font {
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  text-align: center;
+  word-spacing: 4px;
+  letter-spacing: 20px;
+}
