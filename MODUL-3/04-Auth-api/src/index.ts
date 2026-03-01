@@ -1,0 +1,19 @@
+import express, { Application, Request, Response } from "express";
+import authRouter from "./routes/auth.route";
+
+const app: Application = express();
+const PORT = 8080;
+
+app.use(express.json());
+
+// TESTING
+app.get("/ping", (req: Request, res: Response) => {
+  res.status(200).send("pong");
+});
+
+app.use("/api/auth", authRouter);
+
+// Server running
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
