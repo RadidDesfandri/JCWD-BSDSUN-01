@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import authRouter from "./routes/auth.route";
+import postRouter from "./routes/post.route";
 
 const app: Application = express();
 const PORT = 8080;
@@ -12,6 +13,7 @@ app.get("/ping", (req: Request, res: Response) => {
 });
 
 app.use("/api/auth", authRouter);
+app.use("/api/posts", postRouter);
 
 // Server running
 app.listen(PORT, () => {
