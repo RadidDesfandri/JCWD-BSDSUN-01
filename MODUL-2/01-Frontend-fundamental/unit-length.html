@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Length</title>
+  </head>
+
+  <style>
+    div {
+      background-color: lightblue;
+      margin: 50px;
+      padding: 50px;
+      border-radius: 20px;
+    }
+    p {
+      border: 2px solid black;
+      border-radius: 20px;
+    }
+
+    /* Unit Length */
+    /* px -> pixel */
+    /* cm -> centimeter */
+    /* mm -> millimeter */
+    /* in -> inch */
+    /* pt -> point */
+    /* pc -> pica */
+    /* em -> em */
+
+    /* Relative Length */
+    /* vw -> viewport width */
+    /* vh -> viewport height */
+
+    button {
+      background-color: gray;
+      border-radius: 20px;
+      padding: 12px 24px;
+      color: white;
+    }
+
+    button:hover {
+      background-color: yellow;
+    }
+
+    button:active {
+      background-color: red;
+    }
+
+    p::first-letter {
+      color: red;
+      font-size: 2rem;
+    }
+
+    p::first-line {
+      font-weight: bold;
+      color: gray;
+    }
+
+    button::before {
+      content: "👍";
+    }
+
+    button::after {
+      content: "👍";
+    }
+
+    ::selection {
+      background-color: red;
+      color: white;
+    }
+  </style>
+
+  <body style="border: 1px solid black">
+    <div>
+      <p>Margin</p>
+    </div>
+
+    <button>Hover me</button>
+  </body>
+</html>

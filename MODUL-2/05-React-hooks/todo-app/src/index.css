@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --tracking-1: 0em;
+    --tracking-2: 0.025em;
+    --tracking-3: 0.05em;
+    --tracking-4: 0.1em;
+    --tracking-5: 0.15em;
+    --tracking-6: 0.2em;
+    --tracking-7: 0.3em;
+    --tracking-8: 0.4em;
+    --tracking-9: 0.5em;
+}

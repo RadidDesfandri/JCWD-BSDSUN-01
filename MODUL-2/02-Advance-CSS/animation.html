@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+  </head>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      /* height: 100vh; */
+      justify-content: center;
+    }
+
+    #animate {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+
+      animation-name: example;
+      animation-duration: 4s;
+      /* animation-iteration-count: digunakan agar animasinya berulang */
+      animation-iteration-count: infinite;
+    }
+
+    /* Animation example 1 */
+    /* @keyframes example {
+      from {
+        background-color: red;
+      }
+      to {
+        background-color: yellow;
+      }
+    } */
+
+    /* Animation example 2 */
+    @keyframes example {
+      0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+      25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+      }
+      50% {
+        background-color: green;
+        left: 200px;
+        top: 200px;
+      }
+      75% {
+        background-color: blue;
+        left: 0px;
+        top: 200px;
+      }
+      100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+    #animate-2 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+
+      animation: example 5s infinite;
+    }
+  </style>
+
+  <body>
+      <div id="animate-2"></div>
+      <div id="animate-2"></div>
+    <div id="animate"></div>
+    <div id="animate"></div>
+
+  </body>
+</html>

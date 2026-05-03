@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First HTML</title>
+  </head>
+
+  <style>
+    /* table,
+    th,
+    td {
+      border: 1px solid black;
+    } */
+  </style>
+
+  <body>
+    <div style="display: grid; grid-template-columns: repeat(2, 50%)">
+      <div>
+        <!-- <tagname>CONTENTS</tagname> -->
+        <p style="color: red; background-color: blue; font-size: 20px">
+          Hello World
+        </p>
+
+        <!-- Jenis Heading -->
+        <h1>Main Title</h1>
+        <h2>Important Section</h2>
+        <h3>Subheading Here</h3>
+        <h4>Smaller Topic</h4>
+        <h5>Minor Point</h5>
+        <h6>Tiny Detail</h6>
+
+        <!-- Paragraph, Break and Comment tag -->
+        <!-- Untuk comment gunakan shortcut ctrl + / -->
+        <!-- Break line(<br>) digunakan untuk membuat baris baru -->
+        <p>
+          Ini adalah paragraf pertama. <br />
+          Ini adalah paragraf kedua.
+        </p>
+        <p>
+          Ini adalah paragraf ketiga.<br />
+          Ini adalah paragraf keempat.
+        </p>
+
+        <!-- Text Formattimg -->
+        <b>Bold</b> <br />
+        <u>Underline</u> <br />
+        <i>Italic</i> <br />
+        <strong>Strong</strong>
+        <em>Emphasis</em> <br />
+        <mark>Mark</mark> <br />
+        <small>Small</small> <br />
+        <del>Deleted</del> <br />
+        <ins>Inserted</ins> <br />
+        <sup>Superscript</sup>
+        <sub>Subscript</sub> <br />
+
+        <!-- Button Tag -->
+        <button type="button">Button</button>
+        <form action="#">
+          <button type="button">Button</button>
+          <button type="submit">Submit</button>
+        </form>
+
+        <!-- Select Tag -->
+        <select name="city">
+          <option value="dki-jakarta">DKI Jakarta</option>
+          <option value="bandung">Bandung</option>
+          <option value="semarang">Semarang</option>
+        </select>
+
+        <!-- Label, Fieldset, Legend Tag -->
+        <!-- Fieldset adalah element untuk membuat form group -->
+        <!-- Legend adalah element untuk membuat legend di form group -->
+        <fieldset>
+          <legend>Preference</legend>
+          <label for="city">City:</label>
+          <select name="city" id="city">
+            <option value="dki-jakarta">DKI Jakarta</option>
+            <option value="bandung">Bandung</option>
+            <option value="semarang">Semarang</option>
+          </select>
+          <br />
+          <label>Field for interest</label>
+          <input type="radio" id="web" name="interest" value="web" />
+          <label for="web">Web Development</label>
+        </fieldset>
+
+        <!-- Division Tag -->
+        <!-- Division -->
+        <div>
+          <h1>Header Section</h1>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <!-- Nested Division -->
+        <div>
+          <h2>Subheading</h2>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <!-- Nested Division -->
+        <div>
+          <h2>Footer</h2>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <!-- Header, Navigation, Main -->
+        <footer>Footer</footer>
+        <nav>Navigation</nav>
+        <main>Main</main>
+      </div>
+
+      <div>
+        <!-- Unordered List -->
+        <h2>Unordered list items</h2>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ul>
+
+        <!-- Ordered List -->
+        <h2>Ordered list items</h2>
+        <ol>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li>Item 3</li>
+        </ol>
+
+        <!-- Table -->
+        <table border="1" cellpadding="5">
+          <!-- Table Header -->
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+
+          <!-- Table Body -->
+          <tr>
+            <td>1</td>
+            <td>Andi</td>
+            <td>andi@mail.com</td>
+            <td rowspan="2">Detail</td>
+          </tr>
+          <tr>
+            <td colspan="3">Data per juni 2025</td>
+          </tr>
+        </table>
+
+        <!-- Achor Tag -->
+        <!-- target="_blank" digunakan untuk membuka link di tab baru (Absolute Links) -->
+        <a href="https://www.wikipedia.org/" target="_blank">Open Wikipedia</a>
+
+        <!-- Relative Links -->
+        <a href="product.html">Open product page</a>
+
+        <!-- Image Tag -->
+        <!-- Local file -->
+        <h3>Tungtung sahur (Local file)</h3>
+        <img src="./assets/tungtung-sahur.jpg" alt="Tungtung" width="150px" />
+
+        <!-- External Image -->
+        <h3>Comic Captain America</h3>
+        <a
+          target="_blank"
+          href="https://upload.wikimedia.org/wikipedia/en/9/9c/Captain_America_Comics-1_%28March_1941_Timely_Comics%29.jpg"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/9/9c/Captain_America_Comics-1_%28March_1941_Timely_Comics%29.jpg"
+            alt="Comic Captain America"
+            width="150px"
+          />
+        </a>
+
+        <!-- Figure Tag & Caption -->
+        <!-- Figure adalah element untuk menampilkan gambar dengan caption -->
+        <figure>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/9/9c/Captain_America_Comics-1_%28March_1941_Timely_Comics%29.jpg"
+            alt="Comic Captain America"
+            width="200px"
+          />
+          <figcaption>
+            Captain America Comics #1 was published on December 20, 1940,[10]
+            with a cover date of March 1941.
+          </figcaption>
+        </figure>
+
+        <!-- Form -->
+        <h1>Contact Form</h1>
+        <!-- Form adalah element untuk membuat form dengan action dan method -->
+        <form action="/submit" method="post">
+          <!-- Form Input -->
+          <input type="text" placeholder="Add message" />
+        </form>
+
+        <!-- Input Tag -->
+        <input type="text" placeholder="Text input" /> <br />
+        <input type="password" placeholder="Password input" /> <br />
+        <input type="email" placeholder="Email input" /> <br />
+        <input type="number" placeholder="Number type" /> <br />
+        <input type="checkbox" /> <br />
+        <input type="radio" name="gender" /> Male <br />
+        <input type="file" placeholder="File type" /> <br />
+        <input type="color" placeholder="Color type" /> <br />
+        <input type="datetime-local" />
+        <input type="date" />
+        <textarea placeholder="textarea content..."></textarea>
+      </div>
+    </div>
+  </body>
+</html>
