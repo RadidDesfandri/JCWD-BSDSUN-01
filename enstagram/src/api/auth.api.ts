@@ -42,8 +42,9 @@ const useLogin = () => {
 
       return data;
     },
-    onSuccess: () => {
+    onSuccess: ({ token }) => {
       toast.success("Login successfully");
+      localStorage.setItem("access_token", token);
       navigate("/");
     },
     onError: (error) => {
@@ -56,4 +57,28 @@ const useLogin = () => {
   });
 };
 
-export { useRegister, useLogin };
+const useLoginGoogle = () => {
+  const navigate = useNavigate();
+
+  return useMutation({
+    mutationFn: async (payload: { idToken: string }) => {
+      const { data } = await axiosInstance.post("/auth/google-login", payload);
+
+      return data;
+    },
+    onSuccess: ({ token }) => {
+      toast.success("Login successfully");
+      localStorage.setItem("access_token", token);
+      navigate("/");
+    },
+    onError: (error) => {
+      if (error instanceof AxiosError) {
+        console.log(error);
+
+        toast.error(error.response?.data.message);
+      }
+    },
+  });
+};
+
+export { useRegister, useLogin, useLoginGoogle };

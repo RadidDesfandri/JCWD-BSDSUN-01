@@ -12,10 +12,28 @@ import { ErrorMessage, Formik } from "formik";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { LoginSchema } from "../schemas/auth";
-import { useLogin } from "../api/auth.api";
+import { useLogin, useLoginGoogle } from "../api/auth.api";
+import { GoogleLogin } from "@react-oauth/google";
+import { toast } from "sonner";
 
 function Login() {
   const { mutate, isPending } = useLogin();
+  const { mutate: mutateGoogle } = useLoginGoogle();
+
+  const handleGoogleLoginSuccess = (credentialResponse: any) => {
+    const idToken = credentialResponse.credential;
+
+    if (idToken) {
+      mutateGoogle({ idToken });
+    } else {
+      toast.error("Google login failed");
+    }
+  };
+
+  const handleGoogleLoginError = () => {
+    console.log("Google login failed");
+    toast.error("Google login failed");
+  };
 
   return (
     <AuthLayout>
@@ -72,10 +90,14 @@ function Login() {
                 </div>
               </CardContent>
 
-              <CardFooter className="border-t">
+              <CardFooter className="border-t flex-col flex gap-2">
                 <Button type="submit" className="w-full" disabled={isPending}>
                   {isPending ? "Loading..." : "Login"}
                 </Button>
+                <GoogleLogin
+                  onSuccess={handleGoogleLoginSuccess}
+                  onError={handleGoogleLoginError}
+                />
               </CardFooter>
             </Card>
           </form>
