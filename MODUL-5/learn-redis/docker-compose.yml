@@ -1,0 +1,46 @@
+version: '3.8'
+
+networks:
+  node-api-network:
+    name: node-api-network
+
+volumes:
+  postgres-data:
+
+services:
+  app: 
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: node-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - postgres_server
+      - redis_server
+    networks:
+      - node-api-network
+  postgres_server:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data  
+    networks:
+      - node-api-network
+  redis_server:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - node-api-network
+  
